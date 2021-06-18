@@ -1,0 +1,22 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: weather-service-deployment #name of the deployment
+spec:
+  selector:
+    matchLabels:
+      app: weather-service-pod #how the pod is selected i.e. label of the pod (below)
+  template:
+    metadata:
+      labels:
+        app: weather-service-pod #Pod label
+    spec:
+      containers:
+        - name: weather-service-container #container name
+          image: vkgcontainerregistry.azurecr.io/weatherservice:v1 #exact image name login server / repository name
+          resources:
+            limits:
+              memory: "128Mi" #max memory 128 mini-byte to use
+              cpu: "500m" #half cpu, i.e. 500 mili-cpu 
+          ports:
+            - containerPort: 80 #container internal port
