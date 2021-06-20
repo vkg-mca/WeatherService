@@ -72,7 +72,6 @@
 	- in VSCode go to extenssion and install Kubernetes extension from Microsoft
 	- Add a new file `deployment.yml`, start typing deploy and click on the text appeared that creates the template
 	- Add `service.yml` and start typing service and select - service allows internal and external interaction to the pod
-	- 
 
 - Deploy WeatherService to container to AKS
 	- Connect to the cluster `az aks get-credentials --resource-group vkg-resource-group --name vkg-k8s-cluster`, this command will download credentials and merge into local kube config file
